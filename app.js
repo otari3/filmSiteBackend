@@ -18,7 +18,10 @@ app.use(moveisRouter);
 app.use(auth);
 mongoose
   .connect(
-    `mongodb+srv://otikonozadze:${process.env.PASS}@cluster0.2ss1jqf.mongodb.net/${process.env.DB}?retryWrites=true&w=majority&appName=Cluster0&tls=true`
+    `mongodb+srv://otikonozadze:${process.env.PASS}@cluster0.2ss1jqf.mongodb.net/${process.env.DB}?retryWrites=true&w=majority&appName=Cluster0&tls=true`,
+    {
+      ssl: true,
+    }
   )
   .then(() => {
     app.listen(process.env.PORT || 8080);
