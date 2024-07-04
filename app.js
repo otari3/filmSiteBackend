@@ -16,9 +16,7 @@ app.use(bodyParser.json());
 app.use(moveisRouter);
 app.use(auth);
 mongoose
-  .connect(
-    "mongodb+srv://otikonozadze:tvali333@cluster0.2ss1jqf.mongodb.net/filmdb?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(process.env.MONGO_DB)
   .then(() => {
     app.listen(process.env.PORT || 8080);
   })
