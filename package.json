@@ -4,7 +4,7 @@
     "@types/node": "^20.14.9"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "PASS='tvali333' DB='filmdb' node app.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
